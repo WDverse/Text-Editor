@@ -6,7 +6,7 @@ This text-editor is a single-page application that meets the PWA criteria. The a
 
 ## Installation
 
-To install open in a google chrome browser, click the "Install!" button or the install icon on the right side o the address bar. Click "Install" on the pop-up menu.    
+To install open in a google chrome browser, click the "Install!" button or the install icon on the right side of the address bar. Click "Install" on the pop-up menu.    
 
 The following image serves as a guide:  
 
@@ -29,7 +29,7 @@ When JavaScript code is entered:
 ## Credits
 
 AskBCS Tutors  
-Course Resources
+Added Comments with ChatGPT
 
 ## License
 
@@ -38,4 +38,8 @@ N/A
 ## Deployment
 
 Here is the link to the web application:
-[J.A.T.E](https://edityourtexthere-d4cbb3200683.herokuapp.com)
+[J.A.T.E](https://edityourtexthere-d4cbb3200683.herokuapp.com)  
+
+## Refrences
+
+Course Resources
