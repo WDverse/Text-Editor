@@ -2,22 +2,29 @@
 
 ## Description
 
+This text-editor is a single-page application that meets the PWA criteria. The application applies syntax highlighters to javascript code. It can be used on web browsers or installed to be used as a desktop application.
+
 ## Installation
+
+To install open in a google chrome browser, click the "Install!" button or the install icon on the right side o the address bar. Click "Install" on the pop-up menu.    
+
+The following image serves as a guide:  
+
+![Installation](./Assets/images/installation.png)
 
 ## Usage
 
-To use this application, click on the "Start Quiz" button. When the buttton is clicked, the questions and possible answers are displayed, and a 75-seconds timer starts. Select an answer to move to the next question.
-The total score is displayed tt the end of the quiz. Enter your initials and click "Submit" to save your score.
+To use this application, enter your javascript code in the text-editor.
 
-The following image shows the web application's appearance and functionality:
-Start Page:
-![Start Page.](./Assets/images/start.png)
+The following images shows the application's appearance and functionality:  
 
-Quiz Page:
-![Quiz Page.](./Assets/images/quiz.png)
+When app is opened:  
 
-Highscore Page:
-![Highscore Page.](./Assets/images/highscore.png)
+![Start Page](./Assets/images/start.png)
+
+When JavaScript code is entered:  
+
+![Enter JavaScript Code](./Assets/images/text.png)
 
 ## Credits
 

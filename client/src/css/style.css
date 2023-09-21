@@ -1,4 +1,4 @@
-/* app shell CSS */
+/* Define CSS variables for color and layout */
 :root {
   --primary: #31a9e1;
   --gray: #ececec;
@@ -8,204 +8,243 @@
   --navbar-height: 50px;
 }
 
+/* Apply styles to the entire body element */
 body {
-  margin: 0;
-  background-color: var(--monoaki);
+  margin: 0; /* Remove default margin to ensure full-width content */
+  background-color: var(--monoaki); /* Set the background color using the defined variable */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; /* Define a font stack for text content */
 }
 
+/* Apply styles to all h1 elements */
 h1 {
-  font-size: 22px;
+  font-size: 22px; /* Set the font size for h1 elements */
 }
 
+/* Apply styles to the element with the ID 'navbar' */
 #navbar {
-  height: var(--navbar-height);
-  background-color: var(--primary);
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
-  font-size: 22px;
-  font-weight: 550;
-  letter-spacing: 0.9px;
+  height: var(--navbar-height); /* Set the height using the defined variable */
+  background-color: var(--primary); /* Set the background color using the defined variable */
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for a visual effect */
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Vertically align content within the navbar */
+  justify-content: space-between; /* Add space between items horizontally */
+  color: white; /* Set the text color to white */
+  font-size: 22px; /* Set the font size for text within the navbar */
+  font-weight: 550; /* Set the font weight for text within the navbar */
+  letter-spacing: 0.9px; /* Add letter spacing for improved readability */
 }
 
+
+/* Styles for elements within the .navbar-brand class */
 .navbar-brand img {
-  padding-top: 10px;
+  padding-top: 10px; /* Add padding to the top of images within .navbar-brand */
 }
 
+/* Styles for the loading spinner element with class .loading-spinner */
 .loading-spinner {
-  animation-duration: 0.75s;
-  animation-iteration-count: infinite;
-  animation-name: rotate-forever;
-  animation-timing-function: linear;
-  height: 30px;
-  width: 30px;
-  border: 3px solid var(--primary);
-  border-right-color: transparent;
-  border-radius: 50%;
+  animation-duration: 0.75s; /* Set the duration of the animation */
+  animation-iteration-count: infinite; /* Make the animation repeat infinitely */
+  animation-name: rotate-forever; /* Define the name of the animation */
+  animation-timing-function: linear; /* Use a linear timing function for the animation */
+  height: 30px; /* Set the height of the loading spinner */
+  width: 30px; /* Set the width of the loading spinner */
+  border: 3px solid var(--primary); /* Add a solid border with color from the variable */
+  border-right-color: transparent; /* Make the right border transparent to create a spinning effect */
+  border-radius: 50%; /* Create a circular shape by setting border-radius to 50% */
 }
 
+/* Styles for the loading container element */
 .loading-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - var(--navbar-height));
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Horizontally center content within the container */
+  align-items: center; /* Vertically center content within the container */
+  height: calc(100vh - var(--navbar-height)); /* Calculate the height relative to the viewport minus the navbar height */
 }
 
+/* Define a keyframe animation named 'rotate-forever' */
 @keyframes rotate-forever {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(0deg); /* Start the rotation from 0 degrees */
   }
 
   100% {
-    transform: rotate(360deg);
+    transform: rotate(360deg); /* Complete the rotation at 360 degrees (full circle) */
   }
 }
 
+/* Styles for elements with class .app-update */
 .app-update {
-  display: none;
-  position: absolute;
-  right: 10px;
+  display: none; /* Initially hide elements with this class */
+  position: absolute; /* Position the elements absolutely within their parent */
+  right: 10px; /* Position elements 10 pixels from the right edge of their container */
 }
 
+/* Styles for elements with class .app-update and the 'show' class */
 .app-update.show {
-  display: block;
+  display: block; /* Display elements with both .app-update and .show classes */
 }
 
+/* Styles for elements with class .nav-btn */
 .nav-btn {
-  margin: 25px;
+  margin: 25px; /* Add a margin of 25 pixels around elements with this class */
 }
 
+/* Styles for elements with the class .btn (buttons) */
 .btn {
-  text-align: center;
-  display: inline-block;
-  padding: 0.5rem 1.2rem;
-  margin: 0;
-  text-decoration: none;
-  font-size: 1rem;
-  border-radius: 0.3rem;
-  border: 1px solid transparent;
-  outline: none;
-  color: #1a1a1a;
-  background-color: #aeaeae;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  text-align: center; /* Center-align text within the button */
+  display: inline-block; /* Display buttons as inline-block elements */
+  padding: 0.5rem 1.2rem; /* Add padding to the top and bottom (0.5rem) and left and right (1.2rem) */
+  margin: 0; /* Remove any margin */
+  text-decoration: none; /* Remove text underlines and decoration */
+  font-size: 1rem; /* Set the font size to 1rem */
+  border-radius: 0.3rem; /* Add a border-radius for rounded corners */
+  border: 1px solid transparent; /* Add a 1px border with transparency */
+  outline: none; /* Remove outline styles on focus */
+  color: #1a1a1a; /* Set the text color */
+  background-color: #aeaeae; /* Set the background color */
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Add transition effects for color and background */
 }
 
+/* Styles for button hover state */
 .btn:hover {
-  background-color: #cecece;
-  cursor: pointer;
+  background-color: #cecece; /* Change background color on hover */
+  cursor: pointer; /* Change cursor to a pointer on hover */
 }
 
+/* Styles for buttons with the class .btn-squared */
 .btn.btn-squared {
-  border-radius: 0;
+  border-radius: 0; /* Remove border-radius to make the button squared */
 }
 
+/* Styles for buttons with the class .btn-sm (small buttons) */
 .btn.btn-sm {
-  font-size: 0.85rem;
-  padding: 0.3rem 0.9rem;
+  font-size: 0.85rem; /* Reduce font size for small buttons */
+  padding: 0.3rem 0.9rem; /* Adjust padding for small buttons */
 }
 
+/* Styles for buttons with the class .btn-lg (large buttons) */
 .btn.btn-lg {
-  font-size: 1.25rem;
-  padding: 0.8rem 1.4rem;
+  font-size: 1.25rem; /* Increase font size for large buttons */
+  padding: 0.8rem 1.4rem; /* Adjust padding for large buttons */
 }
 
+/* Styles for buttons with the class .btn-block (block-level buttons) */
 .btn.btn-block {
-  width: 100%;
-  display: block;
-  text-align: center;
+  width: 100%; /* Make buttons expand to the full width of their container */
+  display: block; /* Display buttons as block-level elements */
+  text-align: center; /* Center-align text within the button */
 }
 
+/* Styles for buttons with the class .btn-primary (primary buttons) */
 .btn.btn-primary {
-  background-color: #2d3e50;
-  color: #d9e9e8;
+  background-color: #2d3e50; /* Set the background color for primary buttons */
+  color: #d9e9e8; /* Set the text color for primary buttons */
 }
 
+/* Styles for primary button hover state */
 .btn.btn-primary:hover {
-  background-color: #57779a;
+  background-color: #57779a; /* Change background color on hover for primary buttons */
 }
 
+/* Styles for buttons with the class .btn-danger (danger buttons) */
 .btn.btn-danger {
-  background-color: #e64c66;
-  color: #ffffff;
+  background-color: #e64c66; /* Set the background color for danger buttons */
+  color: #ffffff; /* Set the text color for danger buttons */
 }
 
+/* Styles for danger button hover state */
 .btn.btn-danger:hover {
-  background-color: #ee8294;
+  background-color: #ee8294; /* Change background color on hover for danger buttons */
 }
 
+/* Styles for buttons with the class .btn-info (info buttons) */
 .btn.btn-info {
-  background-color: #1bbc9b;
-  color: #ffffff;
+  background-color: #1bbc9b; /* Set the background color for info buttons */
+  color: #ffffff; /* Set the text color for info buttons */
 }
 
+/* Styles for info button hover state */
 .btn.btn-info:hover {
-  background-color: #31e1bd;
+  background-color: #31e1bd; /* Change background color on hover for info buttons */
 }
 
+/* Styles for buttons with the class .btn-light (light buttons) */
 .btn.btn-light {
-  background-color: #d9e9e8;
-  color: #1a1a1a;
+  background-color: #d9e9e8; /* Set the background color for light buttons */
+  color: #1a1a1a; /* Set the text color for light buttons */
 }
 
+/* Styles for light button hover state */
 .btn.btn-light:hover {
-  background-color: #84b8b4;
+  background-color: #84b8b4; /* Change background color on hover for light buttons */
 }
 
+/* Styles for buttons with the class .btn-dark (dark buttons) */
 .btn.btn-dark {
-  background-color: #1a1a1a;
-  color: #d9e9e8;
+  background-color: #1a1a1a; /* Set the background color for dark buttons */
+  color: #d9e9e8; /* Set the text color for dark buttons */
 }
 
+/* Styles for dark button hover state */
 .btn.btn-dark:hover {
-  background-color: #5f5f5f;
+  background-color: #5f5f5f; /* Change background color on hover for dark buttons */
 }
 
+/* Styles for buttons with the class .btn-white (white buttons) */
 .btn.btn-white {
-  background-color: #ffffff;
-  color: #1a1a1a;
+  background-color: #ffffff; /* Set the background color for white buttons */
+  color: #1a1a1a; /* Set the text color for white buttons */
 }
 
+/* Styles for white button hover state */
 .btn.btn-white:hover {
-  background-color: #cccccc;
+  background-color: #cccccc; /* Change background color on hover for white buttons */
 }
 
+/* Styles for buttons with the class .btn-black (black buttons) */
 .btn.btn-black {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #000000; /* Set the background color for black buttons */
+  color: #ffffff; /* Set the text color for black buttons */
 }
 
+/* Styles for black button hover state */
 .btn.btn-black:hover {
-  background-color: #666666;
+  background-color: #666666; /* Change background color on hover for black buttons */
 }
 
+/* Styles for buttons with the class .btn-link (link-style buttons) */
 .btn.btn-link {
-  background-color: #1b89bc;
-  color: #ffffff;
+  background-color: #1b89bc; /* Set the background color for link-style buttons */
+  color: #ffffff; /* Set the text color for link-style buttons */
 }
 
+/* Styles for link-style button hover state */
 .btn.btn-link:hover {
-  background-color: #31a9e1;
+  background-color: #31a9e1
 }
 
+/* Media query for screens with a maximum width of 600px */
 @media only screen and (max-width: 600px) {
+  /* Hide elements with the class .nav-btn on smaller screens */
   .nav-btn {
     display: none;
   }
 
+  /* Hide elements with the class .navbar-brand on smaller screens */
   .navbar-brand {
     display: none;
   }
 
+  /* Center-align content within the element with the ID #navbar on smaller screens */
   #navbar {
     justify-content: center;
   }
 
+  /* Reduce the font size of <h1> elements on smaller screens */
   h1 {
     font-size: 18px;
   }
 }
+

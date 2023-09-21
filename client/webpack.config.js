@@ -1,51 +1,50 @@
+// Import necessary webpack and plugin modules
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require("path");
 const { InjectManifest } = require("workbox-webpack-plugin");
 
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
-// TODO: Add CSS loaders and babel to webpack.
-
+// Export a function that returns the webpack configuration
 module.exports = () => {
   return {
-    mode: "development",
+    mode: "development", // Set the mode to development
     entry: {
-      main: "./src/js/index.js",
-      install: "./src/js/install.js",
+      main: "./src/js/index.js", // Entry point for the 'main' bundle
+      install: "./src/js/install.js", // Entry point for the 'install' bundle
     },
     output: {
-      filename: "[name].bundle.js",
-      path: path.resolve(__dirname, "dist"),
+      filename: "[name].bundle.js", // Output bundle file names will include 'main.bundle.js' and 'install.bundle.js'
+      path: path.resolve(__dirname, "dist"), // Output files will be stored in the 'dist' directory
     },
     plugins: [
-      // Webpack plugin that generates our html file and injects our bundles.
+      // Webpack plugin that generates an HTML file and injects bundle scripts into it
       new HtmlWebpackPlugin({
-        template: "./index.html",
-        title: "Jate",
+        template: "./index.html", // HTML template file
+        title: "Jate", // Title for the HTML page
       }),
 
-      // Injects our custom service worker
+      // Webpack plugin that injects a custom service worker into the build
       new InjectManifest({
-        swSrc: "./src-sw.js",
-        swDest: "src-sw.js",
+        swSrc: "./src-sw.js", // Source file for the service worker
+        swDest: "src-sw.js", // Destination file for the injected service worker
       }),
 
-      // Creates a manifest.json file.
+      // Webpack plugin that generates a manifest.json file for the Progressive Web App (PWA)
       new WebpackPwaManifest({
-        fingerprints: false,
-        inject: true,
-        name: "J.A.T.E",
-        short_name: "Jate",
-        description: "Your cool text editor",
-        background_color: "#225ca3",
-        theme_color: "#225ca3",
-        start_url: "./",
-        publicPath: "./",
+        fingerprints: false, // Do not generate fingerprints for assets
+        inject: true, // Inject the manifest into the HTML
+        name: "J.A.T.E", // Name of the PWA
+        short_name: "Jate", // Short name for the PWA
+        description: "Your cool text editor", // Description of the PWA
+        background_color: "#225ca3", // Background color
+        theme_color: "#225ca3", // Theme color
+        start_url: "./", // Start URL
+        publicPath: "./", // Public path for assets
         icons: [
           {
-            src: path.resolve("src/images/logo.png"),
-            sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join("assets", "icons"),
+            src: path.resolve("src/images/logo.png"), // Path to the PWA icon
+            sizes: [96, 128, 192, 256, 384, 512], // Icon sizes
+            destination: path.join("assets", "icons"), // Destination directory for icons
           },
         ],
       }),
@@ -54,20 +53,19 @@ module.exports = () => {
     module: {
       rules: [
         {
-          test: /\.css$/i,
+          test: /\.css$/i, // Use CSS loader for CSS files
           use: ["style-loader", "css-loader"],
         },
         {
-          test: /\.m?js$/,
-          exclude: /node_modules/,
-          // We use babel-loader in order to use ES6.
+          test: /\.m?js$/, // Use Babel loader for JavaScript files
+          exclude: /node_modules/, // Exclude 'node_modules'
           use: {
-            loader: "babel-loader",
+            loader: "babel-loader", // Use Babel loader
             options: {
-              presets: ["@babel/preset-env"],
+              presets: ["@babel/preset-env"], // Babel preset for environment compatibility
               plugins: [
-                "@babel/plugin-proposal-object-rest-spread",
-                "@babel/transform-runtime",
+                "@babel/plugin-proposal-object-rest-spread", // Babel plugin for object rest spread
+                "@babel/transform-runtime", // Babel plugin for runtime transformation
               ],
             },
           },
