@@ -1,7 +1,7 @@
 {
-  "name": "jate",
+  "name": "JATE",
   "version": "1.0.0",
-  "description": "## Your Task",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "start:dev": "",
