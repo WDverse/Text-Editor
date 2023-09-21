@@ -31,4 +31,4 @@ N/A
 ## Deployment
 
 Here is the link to the web application:
-[J.A.T.E](https://wdverse.github.io/Code-Quiz-Challenge/)
+[J.A.T.E](https://edityourtexthere-d4cbb3200683.herokuapp.com)
